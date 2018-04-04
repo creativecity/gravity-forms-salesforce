@@ -1,0 +1,10 @@
+{
+	"name": "creativecity/gravity-forms-salesforce",
+	"description": "Integrate your forms with Salesforce",
+	"type": "wordpress-plugin",
+	"license": "MIT",
+	"support": {
+		"issues": "https://github.com/creativecity/gravity-forms-salesforce/issues",
+		"source": "https://github.com/creativecity/gravity-forms-salesforce/"
+	}
+}
