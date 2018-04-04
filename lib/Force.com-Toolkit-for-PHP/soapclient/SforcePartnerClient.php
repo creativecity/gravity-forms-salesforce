@@ -62,7 +62,7 @@ require_once ('SforceBaseClient.php');
        $node->removeAttributeNS('http://www.w3.org/2001/XMLSchema-instance', 'type');
      }
 
-     return $dom->saveXML();      
+     return $dom->saveXML();
    }
  }
 
@@ -73,14 +73,14 @@ require_once ('SforceBaseClient.php');
  */
 class SforcePartnerClient extends SforceBaseClient {
   const PARTNER_NAMESPACE = 'urn:partner.soap.sforce.com';
-	
-  function SforcePartnerClient() {
+
+  public function __construct() {
     $this->namespace = self::PARTNER_NAMESPACE;
   }
-  
+
   protected function getSoapClient($wsdl, $options) {
     // Workaround an issue in parsing OldValue and NewValue in histories
-		return new SforceSoapClient($wsdl, $options);      
+		return new SforceSoapClient($wsdl, $options);
   }
 
   /**
@@ -118,7 +118,7 @@ class SforcePartnerClient extends SforceBaseClient {
   }
 
   /**
-   * 
+   *
    * @param array $request
    */
   public function sendSingleEmail($request) {
@@ -193,7 +193,7 @@ class SforcePartnerClient extends SforceBaseClient {
     $arg->sObjects = $sObjects;
     return parent::_upsert($arg);
   }
-  
+
   /**
    * @param string $fieldList
    * @param string $sObjectType
@@ -202,7 +202,7 @@ class SforcePartnerClient extends SforceBaseClient {
    */
   public function retrieve($fieldList, $sObjectType, $ids) {
   	return $this->_retrieveResult(parent::retrieve($fieldList, $sObjectType, $ids));
-  }  
+  }
 
   /**
    *
@@ -222,5 +222,5 @@ class SforcePartnerClient extends SforceBaseClient {
   	}
   	return $arr;
   }
-  
+
 }
